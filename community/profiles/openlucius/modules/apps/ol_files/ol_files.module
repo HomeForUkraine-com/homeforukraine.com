@@ -1,0 +1,120 @@
+<?php
+
+/**
+ * @file
+ * Contains ol_files.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ol_files_theme() {
+  return [
+    'file_item_list_page' => [
+      'variables' => [
+        'vars' => NULL,
+      ],
+      'template' => 'file-item-list-page',
+    ],
+    'files_list' => [
+      'variables' => [
+        'vars' => NULL,
+      ],
+      'template' => 'files-list',
+    ],
+    'file_modal_put_in_folder' => [
+      'variables' => [
+        'vars' => NULL,
+      ],
+      'template' => 'file-modal-put-in-folder',
+    ],
+    'file_modal_remove_folder' => [
+      'variables' => [
+        'vars' => NULL,
+      ],
+      'template' => 'file-modal-remove-folder',
+    ],
+    'text_doc_page' => [
+      'variables' => [
+        'vars' => NULL,
+      ],
+      'template' => 'text-doc-page',
+    ],
+    'text_doc_card' => [
+      'variables' => [
+        'vars' => NULL,
+      ],
+      'template' => 'text-doc-card',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_add_ol_section()
+ * @param $sections
+ */
+function ol_files_add_ol_section(&$sections){
+  $sections['files'] = array(
+    'label' => t('Files'),
+    'path' => t('files'),
+    'weight' => 100,
+    'icon_class' => 'lni lni-empty-file',
+  );
+}
+
+/**
+ * Implements hook_stream_item_body_labels()
+ * Add labels to use in activity stream.
+ *
+ * @return array
+ */
+function ol_files_stream_item_body_labels(){
+  return [
+    'files_added' => t('added files'),
+    'folder_added' => t('added a folder'),
+    'text_doc_added' => t('added a book page'),
+    'folder_removed' => t('removed a folder'),
+    'category_added' => t('added a notebook category'),
+    'category_removed' => t('removed a notebook category'),
+    'file_added' => t('added a file'),
+    'file_removed' => t('removed a file'),
+  ];
+}
+
+/**
+ * Implements hook_sections_badges_count()
+ * Add links at comments to use in activity stream.
+ *
+ * @param $key
+ *
+ * @return array[]
+ */
+function ol_files_sections_badges_count($key){
+  // Check if current item concerns this module.
+  switch ($key) {
+    case 'files':
+      $gid = \Drupal::service('current_route_match')->getParameter('gid');
+      $count = getTotalFileCount($gid);
+      break;
+  }
+  // Return array with count.
+  if(isset($count)) {
+    return ['count' => $count];
+  }
+}
+
+/**
+ * @param $gid
+ *
+ * @return mixed
+ */
+function getTotalFileCount($gid){
+  // Count query.
+  $query = \Drupal::database()->select('ol_file', 'olf');
+  $query->addField('olf', 'id');
+  $query->condition('olf.group_id', $gid);
+  $query->condition('olf.status', 1);
+  // Only count stand alone files for now.
+//  $query->condition('olf.entity_type', 'file');
+  return $query->countQuery()->execute()->fetchField();
+}

@@ -1,0 +1,121 @@
+<?php
+/**
+ * @file
+ * Functions to support themings.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element\PasswordConfirm;
+
+/**
+ * Style fields on user/{user}/edit page
+ *
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
+ *
+ * Implements hook_form_alter()
+ */
+function ol_base_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['account']['name']['#attributes']['class'][] = 'form-control';
+  $form['#attributes']['class'][] = 'col-md-10 col-xl-9 p-3  bg-white rounded shadow-sm';
+  $form['account']['mail']['#attributes']['class'][] = 'form-control';
+  $form['account']['current_pass']['#attributes']['class'][] = 'form-control';
+  $form['account']['pass']['#process'][] = 'ol_base_form_user_register_form_process_pass';
+  $form['account']['field_picture']['#attributes']['class'][] = 'form-control';
+  $form['language']['preferred_langcode']['#attributes']['class'][] = 'form-control';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn btn-success btn-lg';
+}
+/**
+ * Implements hook_form_FORM_ID_alter()
+ * Style fields on user/login/ page
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ *
+ */
+function ol_base_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['name']['#attributes']['class'][] = 'form-control col-md-6';
+  $form['pass']['#attributes']['class'][] = 'form-control col-md-6';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn btn-success mt-3 px-5';
+  $form['#attributes']['class'][] = 'col-md-10 col-xl-9 p-3  bg-white rounded shadow-sm';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function ol_base_form_user_pass_reset_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['actions']['submit']['#attributes']['class'][] = 'btn btn-success mt-3 px-5';
+  $form['#attributes']['class'][] = 'col-md-10 col-xl-9 p-3  bg-white rounded shadow-sm';
+}
+
+/**
+ * Style fields on user/password page
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ *
+ * Implements hook_form_alter()
+ */
+function ol_base_form_user_pass_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['name']['#attributes']['class'][] = 'form-control col-md-6';
+  $form['pass']['#attributes']['class'][] = 'form-control col-md-6';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn btn-success mt-1 px-5';
+  $form['#attributes']['class'][] = 'col-md-10 col-xl-9 p-3  bg-white rounded shadow-sm';
+
+
+}
+
+/**
+ * @param $element
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $complete_form
+ *
+ * @return mixed
+ */
+function ol_base_form_user_register_form_process_pass(&$element, FormStateInterface $form_state, &$complete_form) {
+  $element = PasswordConfirm::processPasswordConfirm($element, $form_state, $complete_form);
+  $element['pass1']['#placeholder'] = t('Your new password');
+  $element['pass2']['#placeholder'] = t('Repeat your new password');
+  $element['pass1']['#attributes']['class'][] = 'form-control';
+  $element['pass2']['#attributes']['class'][] = 'form-control';
+  return $element;
+}
+
+/**
+ * @param $variables
+ */
+function ol_base_preprocess_html(&$variables) {
+  // Get data, if user is logged in.
+  if(\Drupal::currentUser()->isAuthenticated()) {
+    $path = \Drupal::request()->getpathInfo();
+    $arg = explode('/', $path);
+    // Add extra class to user page
+    $variables['attributes']['class'][] = ($arg[1] == 'user' && $arg[3] == 'edit') ? 'user' : '';
+  }
+  if(!empty($arg[2])) {
+    $variables['attributes']['class'][] = ($arg[2] == 'user') ? 'user' : '';
+  }
+  // Hide admin toolbar.
+  if (\Drupal::config('ol_main.admin_settings')->get('show_admin_toolbar') != 1) {
+    if (!empty($variables['attributes']['class'])) {
+      unset($variables['page_top']['toolbar']);
+      $variables['attributes']['class'] = array_filter($variables['attributes']['class'], function ($value) {
+        return strpos($value, 'toolbar-') !== 0;
+      });
+    }
+  }
+}
+/**
+ * Implements hook_preprocess()
+ */
+function ol_base_preprocess(array &$variables) {
+  $variables['base_path'] = base_path();
+  $variables['theme_path'] = base_path() . $variables['directory'];
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+}

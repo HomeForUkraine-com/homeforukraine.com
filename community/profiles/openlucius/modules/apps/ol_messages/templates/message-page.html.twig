@@ -1,0 +1,52 @@
+<div class="col-md-9 col-xl-8 pl-md-5 bd-content mb-5 offset-lg-1">
+
+  <!-- Title -->
+  <div class="row py-2 pl-3">
+    <div class="col">
+      <h1 class="h4"><i class="lni lni-envelope"></i> {{ vars.title }}</h1>
+    </div>
+  </div>
+
+  <!-- Message-->
+  {{ vars.message|raw }}
+
+  <!-- Comments -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="comment-wrapper">
+        <div class="panel panel-info">
+          <div class="panel-body">
+            {% if vars.comment_items|render|striptags|trim %}
+              <ul class="media-list">
+                <!-- Comment items -->
+                {{ vars.comment_items|raw }}
+                <!-- / Comment items-->
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comment form -->
+  {#  All this should move to CommentForm #}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="comment-wrapper add-comment card">
+        <div class="panel panel-info">
+          <div class="panel-body">
+            <div class="row">
+              <div class="d-none d-sm-block col-1 write-comment-picture">
+                <img class="rounded-circle" src="{{ vars.current_user_picture }}" alt="" height="30">
+              </div>
+              <div class="col-sm-11">
+                {{ vars.comment_form }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

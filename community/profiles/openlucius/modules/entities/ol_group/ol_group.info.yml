@@ -1,0 +1,10 @@
+name: 'OL Group'
+type: module
+description: 'OL Group Module'
+core_version_requirement: ^9
+package: 'OL core'
+
+# Information added by Drupal.org packaging script on 2021-05-20
+version: '2.0.0-alpha7'
+project: 'openlucius'
+datestamp: 1621518109

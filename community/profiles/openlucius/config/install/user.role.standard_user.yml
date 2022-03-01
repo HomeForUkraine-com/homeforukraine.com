@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: standard_user
+label: 'Standard User'
+weight: -6
+is_admin: null
+permissions:
+  - 'access all openlucius content'
+  - 'access all users'
+  - 'sort book pages'

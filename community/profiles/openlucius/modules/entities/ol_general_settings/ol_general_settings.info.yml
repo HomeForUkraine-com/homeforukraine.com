@@ -1,0 +1,10 @@
+name: 'OL General Settings'
+type: module
+description: 'OL General Settings'
+core_version_requirement: ^9.0
+package: 'Entities'
+
+# Information added by Drupal.org packaging script on 2021-05-20
+version: '2.0.0-alpha7'
+project: 'openlucius'
+datestamp: 1621518109

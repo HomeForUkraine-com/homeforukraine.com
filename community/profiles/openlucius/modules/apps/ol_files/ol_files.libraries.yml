@@ -1,0 +1,8 @@
+ol_files:
+  version: 1.x
+  css:
+    theme:
+      css/ol_files.css: {}
+      css/bootstrap-icons/bootstrap-icons.css: {}
+  js:
+    js/ol_files.js: {}

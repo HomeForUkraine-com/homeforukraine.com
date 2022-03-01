@@ -1,0 +1,11 @@
+ol_files.group_files:
+  path: '/group/{gid}/files'
+  defaults:
+    _controller: '\Drupal\ol_files\Controller\FilesController::getFiles'
+    _title: 'Files'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _group_access_check: 'TRUE'
+    _permission: 'access ol content'
+    gid: '[0-9]+'

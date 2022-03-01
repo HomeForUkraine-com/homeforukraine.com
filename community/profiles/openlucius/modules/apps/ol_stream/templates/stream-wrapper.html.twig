@@ -1,0 +1,27 @@
+<div class="p-3 bg-white rounded shadow-sm mb-3">
+  {% if vars.stream_html is empty %}
+    <i class="lni lni-bulb"></i> <i> {{ 'No activity yet.'|t }}</i><br />
+  {% endif %}
+
+  {% if vars.stream_html %}
+  <h6 class="border-bottom border-gray pb-2 mb-0">
+    {% if not vars.in_group %}
+      <a href="/group/{{ vars.group_id }}/stream" class="text-muted">
+        {% if vars.group_thumbnail_url %}
+          <img style="height: 40px;" class="img-thumbnail small" src="{{ vars.group_thumbnail_url }}" alt="group image" />
+        {% else %}
+          <i class="lni lni-users text-muted"></i>
+        {% endif %}
+        {{ vars.group_name }}
+      </a>
+    {% else %}
+      &nbsp;
+    {% endif %}
+    <span class="badge badge-light float-right text-muted">{{ vars.readable_date }}</span>
+  </h6>
+  {% endif %}
+  {{ vars.stream_html|raw }}
+  <small class="d-block text-right mt-3">
+    {# Future maybe handy <a href="#"></a>#}
+  </small>
+</div>

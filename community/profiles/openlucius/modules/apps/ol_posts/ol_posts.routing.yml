@@ -1,0 +1,11 @@
+lus_post.posts:
+  path: '/group/{gid}/posts'
+  defaults:
+    _controller: '\Drupal\ol_posts\Controller\PostsController::getPostList'
+    _title: 'Posts'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _group_access_check: 'TRUE'
+    _permission: 'access ol content'
+    group_id: '[0-9]+'

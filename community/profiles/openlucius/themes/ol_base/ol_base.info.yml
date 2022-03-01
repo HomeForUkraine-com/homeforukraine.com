@@ -1,0 +1,38 @@
+name: OpenLucius
+type: theme
+# version: VERSION
+core_version_requirement: ^9
+base theme: false
+description: 'OpenLucius theme'
+libraries:
+  - ol_base/global
+regions:
+  main_nav: 'Main Navigation'
+  main_title: 'Main Title'
+  main_sections: 'Main Sections'
+  content_top: 'Content top'
+  content: Content
+libraries-override:
+  system/base: false
+stylesheets-remove:
+  - core/themes/stable/css/contextual/contextual.module.css
+  - core/themes/stable/css/tour/tour.module.css
+  - core/themes/stable/css/contextual/contextual.toolbar.css
+  - core/themes/stable/css/contextual/contextual.icons.theme.css
+  - core/themes/seven/css/components/quickedit.css
+  - core/themes/stable/css/quickedit/quickedit.module.css
+  - core/themes/stable/css/toolbar/toolbar.module.css
+  - core/themes/stable/css/toolbar/toolbar.menu.css
+  - core/themes/stable/css/contextual/contextual.theme.css
+  - core/themes/stable/css/quickedit/quickedit.theme.css
+  - core/themes/stable/css/quickedit/quickedit.icons.theme.css
+  - core/themes/stable/css/user/user.icons.admin.css
+  - core/themes/stable/css/shortcut/shortcut.theme.css
+  - core/themes/stable/css/shortcut/shortcut.icons.theme.css
+  - core/themes/base/theme.css
+  - core/assets/vendor/jquery.ui/themes/base/theme.css
+
+# Information added by Drupal.org packaging script on 2021-05-20
+version: '2.0.0-alpha7'
+project: 'openlucius'
+datestamp: 1621518109
