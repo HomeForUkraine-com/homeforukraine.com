@@ -13,6 +13,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 $autoloader = require_once 'autoload.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $kernel = new DrupalKernel('prod', $autoloader);
 
 $request = Request::createFromGlobals();

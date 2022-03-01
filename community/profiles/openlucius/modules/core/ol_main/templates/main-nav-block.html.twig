@@ -38,6 +38,28 @@
         </ul>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="/community/node"><i class="lni lni-user"></i> {{ 'Contents'|t }}</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/community/forum"><i class="lni lni-user"></i> {{ 'Forum'|t }}</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/community/search"><i class="lni lni-user"></i> {{ 'Search'|t }}</a>
+      </li>
+
+      <!-- dont work -->
+      {% for item in user_menu_items %}
+        <li{{ item.attributes }}>
+          {{ link(item.title, item.url) }}
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+
       {# Todo: everything
         <li class="nav-item">
         <a class="nav-link" href="#">Everything</a>

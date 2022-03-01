@@ -13,6 +13,9 @@ regions:
   content_top: 'Content top'
   content: Content
 libraries-override:
+  core/modernizr:
+    js:
+      assets/vendor/modernizr/modernizr.min.js: scripts/modernizr.js
   system/base: false
 stylesheets-remove:
   - core/themes/stable/css/contextual/contextual.module.css
