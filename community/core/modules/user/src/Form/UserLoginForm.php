@@ -68,7 +68,7 @@ class UserLoginForm extends FormBase {
     $this->userFloodControl = $user_flood_control;
     $this->userStorage = $user_storage;
     $this->userAuth = $user_auth;
-    $this->renderer = $renderer;
+    $this->renderer = $renderer;    
   }
 
   /**

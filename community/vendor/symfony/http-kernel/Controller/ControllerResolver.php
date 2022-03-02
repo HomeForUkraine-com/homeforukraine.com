@@ -152,7 +152,7 @@ class ControllerResolver implements ControllerResolverInterface
     }
 
     private function getControllerError($callable): string
-    {
+    {        
         if (\is_string($callable)) {
             if (str_contains($callable, '::')) {
                 $callable = explode('::', $callable, 2);

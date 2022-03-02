@@ -1,10 +1,13 @@
 user.register:
   path: '/user/register'
   defaults:
-    _entity_form: 'user.register'
+    _form: 'user.register'
     _title: 'Create new account'
   requirements:
-    _access_user_register: 'TRUE'
+    _user_is_logged_in: 'FALSE'
+  options:
+    _maintenance_access: TRUE
+    _entity_create_access: 'user'
 
 user.logout:
   path: '/user/logout'

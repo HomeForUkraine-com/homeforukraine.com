@@ -36,6 +36,11 @@ class RedirectResponseSubscriber implements EventSubscriberInterface {
   public function __construct(UnroutedUrlAssemblerInterface $url_assembler, RequestContext $request_context) {
     $this->unroutedUrlAssembler = $url_assembler;
     $this->requestContext = $request_context;
+
+    if(isset($GLOBALS['isDebug'])&&$GLOBALS['isDebug']){
+      debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS); 
+      exit;
+    }
   }
 
   /**

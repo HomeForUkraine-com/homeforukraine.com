@@ -16,8 +16,7 @@ function ol_main_theme() {
   return [
     'main_nav_block' => [
       'variables' => [
-        'vars' => NULL,
-        'menu_name' => NULL, 'items' => [], 'attributes' => []
+        'vars' => NULL
       ],
       'template' => 'main-nav-block',
     ],

@@ -11,6 +11,8 @@
 use Drupal\Core\DrupalKernel;
 use Symfony\Component\HttpFoundation\Request;
 
+include('routing.enhancer.php');
+
 $autoloader = require_once 'autoload.php';
 
 ini_set('display_errors', 1);

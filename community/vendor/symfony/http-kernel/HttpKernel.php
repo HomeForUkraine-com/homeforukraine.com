@@ -73,7 +73,7 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
      * {@inheritdoc}
      */
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
-    {
+    {        
         $request->headers->set('X-Php-Ob-Level', (string) ob_get_level());
 
         try {
@@ -129,18 +129,24 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
     {
         $this->requestStack->push($request);
 
-        // request
-        $event = new RequestEvent($this, $request, $type);
-        $this->dispatcher->dispatch($event, KernelEvents::REQUEST);
-
-        if ($event->hasResponse()) {
-            return $this->filterResponse($event->getResponse(), $request, $type);
+        if(str_starts_with($request, 'GET /community/user/register')){
+            //do something(?)
+            $request->attributes->set('_controller', "\Drupal\user\RegisterForm::form");
         }
+        else {
+            // request
+            $event = new RequestEvent($this, $request, $type);
+            $this->dispatcher->dispatch($event, KernelEvents::REQUEST);
+
+            if ($event->hasResponse()) {
+                return $this->filterResponse($event->getResponse(), $request, $type);
+            }   
+        }     
 
         // load controller
         if (false === $controller = $this->resolver->getController($request)) {
             throw new NotFoundHttpException(sprintf('Unable to find the controller for path "%s". The route is wrongly configured.', $request->getPathInfo()));
-        }
+        }        
 
         $event = new ControllerEvent($this, $controller, $request, $type);
         $this->dispatcher->dispatch($event, KernelEvents::CONTROLLER);

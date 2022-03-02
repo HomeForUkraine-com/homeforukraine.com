@@ -45,6 +45,7 @@ class AccessDeniedSubscriber implements EventSubscriberInterface {
    *   The event to process.
    */
   public function onException(ExceptionEvent $event) {
+
     $exception = $event->getThrowable();
     if ($exception instanceof AccessDeniedHttpException) {
       $route_name = RouteMatch::createFromRequest($event->getRequest())->getRouteName();
@@ -79,6 +80,8 @@ class AccessDeniedSubscriber implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
+    //echo "here 1"; exit;
+
     // Use a higher priority than
     // \Drupal\Core\EventSubscriber\ExceptionLoggingSubscriber, because there's
     // no need to log the exception if we can redirect.
