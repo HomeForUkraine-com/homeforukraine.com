@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: external_user
-label: 'External User'
-weight: -5
-is_admin: null
-permissions: {  }

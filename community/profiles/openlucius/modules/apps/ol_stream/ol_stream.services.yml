@@ -1,9 +1,0 @@
-services:
-  olstream.stream:
-    class: Drupal\ol_stream\Services\OlStream
-    arguments: ['@olmembers.members','@renderer']
-  olstream.access_checker:
-    class: Drupal\ol_stream\Access\UserProfileAccessChecker
-    arguments: ['@current_user']
-    tags:
-      - { name: access_check, applies_to: _user_profile_access_check}

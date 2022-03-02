@@ -1,5 +1,0 @@
-ol_posts:
-  version: 1.x
-  css:
-    theme:
-      css/ol_posts.css: {}
