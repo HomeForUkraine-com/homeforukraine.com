@@ -145,13 +145,6 @@ class HTMLPurifier
      */
     public function purify($html, $config = null)
     {
-        if(DEBUG_HTMLPurifier){
-            echo $html.'<br>\r\n';
-            debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS); exit;
-        }
-
-        return $html;
-
         // :TODO: make the config merge in, instead of replace
         $config = $config ? HTMLPurifier_Config::create($config) : $this->config;
 

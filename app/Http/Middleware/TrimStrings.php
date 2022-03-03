@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class TrimStrings extends Middleware
 {
+    // __FOCUS: Here you have to put fields that you don't want to filter
+
     /**
      * The names of the attributes that should not be trimmed.
      *
@@ -17,6 +19,7 @@ class TrimStrings extends Middleware
         'password_confirmation',
         'body',
         'category',
+        'content'
     ];
 
     /**
@@ -29,6 +32,7 @@ class TrimStrings extends Middleware
         'password_confirmation',
         'body',
         'description',
+        'content'
     ];
 
 

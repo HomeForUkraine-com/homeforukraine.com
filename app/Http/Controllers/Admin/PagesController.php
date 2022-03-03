@@ -84,6 +84,8 @@ class PagesController extends Controller
 
     public function update(Request $request)
     {
+        //debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS); exit;
+        
         if (!$request->isMethod('post')) {
             $data['result'] = Page::find($request->id);
 

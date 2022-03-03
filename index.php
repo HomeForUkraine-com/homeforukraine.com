@@ -55,11 +55,10 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
-///
 /// Debug costants
-///
 define('DEBUG', 0);
-define('DEBUG_HTMLPurifier', 0);  // This is also a way for flagging sensible parts of the code
+// Sign particular part of code to remember with keyword __FOCUS
+
 
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
