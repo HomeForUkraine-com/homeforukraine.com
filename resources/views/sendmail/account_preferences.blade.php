@@ -173,7 +173,7 @@ button.learn-more {
 			<div class="wrapper box" style="border: solid 1px #d8d8d8; padding: 15px; width: 100%;">
 				<div class="d-flex">
             <div>
-            <img src="{{URL::asset('public/front/images/logos/logo.png')}}" class="img-fluid" alt="logo">
+            <img src="{{URL::asset('public/front/images/logos/hfu.png')}}" class="img-fluid" alt="logo">
           </div>
         </div>
         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">

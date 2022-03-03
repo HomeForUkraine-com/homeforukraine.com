@@ -179,7 +179,7 @@ class SetDataServiceProvider extends ServiceProvider
             if (!empty($general['logo']) && file_exists(public_path('front/images/logos/'. $general['logo']))) {
                 $logo = url('public/front/images/logos/'. $general['logo']);
             } else {
-                $logo = env('APP_LOGO_URL') != '' ? env('APP_LOGO_URL') : url('public/front/images/logos/logo.png');
+                $logo = env('APP_LOGO_URL') != '' ? env('APP_LOGO_URL') : url('public/front/images/logos/hfu.png');
             }
             if (!defined('LOGO_URL')) {
                 define('LOGO_URL', $logo);
