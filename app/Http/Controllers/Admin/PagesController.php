@@ -59,13 +59,13 @@ class PagesController extends Controller
                         'position'          => 'Position'
                         );
 
+
             $validator = Validator::make($request->all(), $rules);
             $validator->setAttributeNames($fieldNames);
 
             if ($validator->fails()) {
                 return back()->withErrors($validator)->withInput();
             } else {
-
 
                 $page = new Page;
                 $page->name             = $request->name;
