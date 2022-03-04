@@ -6,6 +6,13 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
+if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") {
+    $location = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: ' . $location);
+    exit;
+}
+
 /**
  * Define the application's minimum supported PHP version as a constant so it can be referenced within the application.
  */
