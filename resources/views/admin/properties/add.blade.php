@@ -5,8 +5,8 @@
     <!-- Main content -->
   <section class="content-header">
           <h1>
-          List Your Space
-          <small>List Your Space</small>
+          <?= $GLOBALS['!list_space'] ?>
+          <small><?= $GLOBALS['!list_space'] ?></small>
         </h1>
         <ol class="breadcrumb">
     <li><a href="{{url('/')}}/admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -20,7 +20,7 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">List Your Space</h3>
+              <h3 class="box-title"><?= $GLOBALS['!list_space'] ?></h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->

@@ -66,6 +66,8 @@ $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 define('DEBUG', 0);
 // Sign particular part of code to remember with keyword __FOCUS
 
+// Global settings to make definitive
+$GLOBALS['!list_space'] = 'Share your home';
 
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()

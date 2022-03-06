@@ -22,7 +22,7 @@ return [
         'all_photos'			         => 'All Photos',
         'for_sale'			   	       => 'For Sale',
         'all_categories'		       => 'All Categories',
-        'list_space'               => 'List your Space',
+        'list_space'               => $GLOBALS['!list_space'].' now!',
         'login'                    => 'Log In',
         'dashboard'                => 'Dashboard',
         'your_listing'             => 'Listings',
@@ -225,7 +225,7 @@ return [
         'login'                 =>'Log In'
     ],
     'property'=>[
-        'list_space'            =>'List Your Space',
+        'list_space'            =>$GLOBALS['!list_space'],
         'property_title'        =>'Lets you make money renting out your place',
         'home_type'             =>'Home Type',
         'room_type'             =>'Room Type',
