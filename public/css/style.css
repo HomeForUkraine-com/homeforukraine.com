@@ -4451,3 +4451,13 @@ a.send-btn {
 		height: auto!important;
 	}
  }
+
+.headerLogo {
+    height: 42px;
+}
+
+ .byEurope {
+	 display:inline;
+	 height: 40px;
+	 padding-top: 1px;
+ }

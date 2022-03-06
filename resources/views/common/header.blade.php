@@ -7,7 +7,9 @@
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid container-fluid-90">
-                <a class="navbar-brand logo_h" aria-label="logo" href="{{ url('/') }}"><img src="{{ $logo ?? '' }}" alt="logo" class="img-130x32"></a>
+                <a class="navbar-brand logo_h" aria-label="logo" href="{{ url('/') }}"><img src="{{ $logo ?? '' }}" alt="logo" class="headerLogo"></a>
+                <img src="/public/front/img/eu.png" class="byEurope">
+
 				<!-- Trigger Button -->
 				<a href="#" aria-label="navbar" class="navbar-toggler" data-toggle="modal" data-target="#left_modal">
 					<span class="icon-bar"></span>
