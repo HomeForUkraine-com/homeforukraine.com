@@ -372,7 +372,7 @@ return [
     ],
     'listing_price'=>[
        'base_price'           =>'Basic expenses',
-       'night_price'          =>'Nightly Price',
+       'night_price'          =>'Monthly Expenses', // night_price to be renamed monthly_price
        'currency'             =>'Currency',
        'access_offer'         =>'You can offer discounts for longer stays by setting',
        'week_month'           =>'weekly and monthly',

@@ -44,14 +44,14 @@
               @endforeach
             </select>
           </div>
-          <div class="col-md-8">
+          <!--<div class="col-md-8">
             @if($result->property_price->weekly_discount == 0 && $result->property_price->monthly_discount == 0)
               <p id="js-set-long-term-prices" class="row-space-top-6 text-center text-muted set-long-term-prices">
                {{trans('messages.listing_price.access_offer')}}  <a data-prevent-default="" href="#" id="show_long_term">{{trans('messages.listing_price.week_month')}}</a> {{trans('messages.listing_price.price')}}.
               </p>
               <hr class="row-space-top-6 row-space-5 set-long-term-prices">
             @endif
-          </div>
+          </div>-->
         </div>
 
         <!-- Expenses description -->

@@ -45,7 +45,7 @@
 										</select>
 									</div>
 
-									<div class="form-group col-md-12">
+									<!--<div class="form-group col-md-12">
 										@if($result->property_price->weekly_discount == 0 && $result->property_price->monthly_discount == 0)
 											<p id="js-set-long-term-prices" class="text-center text-muted set-long-term-prices">
 											{{trans('messages.listing_price.access_offer')}}  
@@ -54,7 +54,7 @@
 												</a> {{trans('messages.listing_price.price')}}.
 											</p>
 										@endif
-									</div>
+									</div>-->
 								</div>
 
 								<div class="form-row mt-4 border rounded pb-4 m-0  {{ ($result->property_price->weekly_discount == 0 && $result->property_price->monthly_discount == 0)? 'display-off':''}}" id="long-term-div">

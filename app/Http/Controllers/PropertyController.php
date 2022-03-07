@@ -103,6 +103,7 @@ class PropertyController extends Controller
 
                 $property_price                 = new PropertyPrice;
                 $property_price->property_id    = $property->id;
+                $property_price->price          = 0; // attempt to set default price to 0. Remove it if it doesn't works
                 $property_price->currency_code  = \Session::get('currency');
                 $property_price->save();
 
@@ -351,7 +352,7 @@ class PropertyController extends Controller
         } elseif ($step == 'pricing') {
             if ($request->isMethod('post')) {
                 $rules = array(
-                    'price' => 'required|numeric|min:5',
+                    'price' => 'required|numeric|min:0',
                     'weekly_discount' => 'nullable|numeric|max:99|min:0',
                     'monthly_discount' => 'nullable|numeric|max:99|min:0'
                 );
