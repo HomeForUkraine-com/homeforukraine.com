@@ -6,6 +6,11 @@
 <div class="container mb-4 margin-top-85 min-height">
     <div class="d-flex justify-content-center">
 		<div class="p-5 mt-5 mb-5 border w-450">
+			<div style="margin:5px; font-style: italic;">
+				<b>Warning:</b> the login through Facebook and Google are in the process of validation by the companies.<br>
+				For the moment sign in the website using standard registration and login forms. <b>Thank you for your patience!</b>
+			</div>
+
             @if($social['facebook_login'])
                 <a href="{{ isset($facebook_url) ? $facebook_url:URL::to('facebookLogin') }}">
                     <button class="btn btn-outline-primary pt-3 pb-3 text-16 w-100">
