@@ -12,6 +12,7 @@
 					</div>
 				</div>
 			@endif
+				<?= $GLOBALS['!social_login_warning'] ?>
                 @if($social['facebook_login'])
                     <a href="{{ isset($facebook_url) ? $facebook_url:URL::to('facebookLogin') }}">
                         <button class="btn btn-outline-primary pt-3 pb-3 text-16 w-100">

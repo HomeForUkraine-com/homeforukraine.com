@@ -69,6 +69,13 @@ define('DEBUG', 0);
 // Global settings to make definitive
 $GLOBALS['!list_space'] = 'Share your home';
 
+$GLOBALS['!social_login_warning'] = '
+    <div style="margin:5px; font-style: italic;">
+        <b>Warning:</b> the login through Facebook and Google are in the process of validation by the companies.<br>
+        For the moment sign in the website using standard registration and login forms. <b>Thank you for your patience!</b>
+    </div>
+    ';
+
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
