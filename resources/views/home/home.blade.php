@@ -87,10 +87,10 @@
 		<div class="container-fluid container-fluid-90" style="margin-bottom: 50px;"> <!-- Removes the margin if new section is added -->
 			<div class="row">
 				<div class="section-intro text-center">
-					<h2>The project</h2>
+					<h1>The project</h1>
 					<p>
-						This is a no-profit project that aims to offer a tools for helping certified no-profit organization
-						to find and manage temporary home for war refugees. <br>
+						<b>This is a no-profit project that aims to offer a tools for helping certified no-profit organization
+						to find and manage temporary home for war refugees.</b> <br>
 						The project would help also people to organize their generosity directly with the no-profit organizations 
 						to make sure you have a positive experience in their good intentions: the web site, indeed, would offer 
 						the possibility to make clear the conditions desired by the donor and a system of reviews to ensure 
