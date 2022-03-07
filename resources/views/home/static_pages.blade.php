@@ -10,7 +10,7 @@
 @stop
 
 <style>
-    img {
+    #site-content > img {
         width:100%;
         height: auto;
     }

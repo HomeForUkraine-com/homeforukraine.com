@@ -22,7 +22,7 @@
     box-shadow: 0 0 10px rgba(188,190,202,0.32);
   }
 
-  img {
+  .frame > img {
     display: block;
     border: 0;
     width:100%;

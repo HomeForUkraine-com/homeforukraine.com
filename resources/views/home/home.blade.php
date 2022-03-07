@@ -83,6 +83,26 @@
 		</div>
 	</section>
 
+	<section class="bg-gray mt-70 pb-2">
+		<div class="container-fluid container-fluid-90" style="margin-bottom: 50px;"> <!-- Removes the margin if new section is added -->
+			<div class="row">
+				<div class="section-intro text-center">
+					<h2>The project</h2>
+					<p>
+						This is a no-profit project that aims to offer a tools for helping certified no-profit organization
+						to find and manage temporary home for war refugees. <br>
+						The project would help also people to organize their generosity directly with the no-profit organizations 
+						to make sure you have a positive experience in their good intentions: the web site, indeed, would offer 
+						the possibility to make clear the conditions desired by the donor and a system of reviews to ensure 
+						a peaceful coexistence for all.
+					</p>
+				</div>
+			</div>
+		</div>
+	<section>
+
+	<!-- Temporary ignored section (to reimplement) -->
+	<!--
 	@if(!$starting_cities->isEmpty())
 	<section class="bg-gray mt-70 pb-2">
 		<div class="container-fluid container-fluid-90">
@@ -258,6 +278,7 @@
 		</div>
 	</section>
 	@endif
+	-->
 @stop
 
 @push('scripts')

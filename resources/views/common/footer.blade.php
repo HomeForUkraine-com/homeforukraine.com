@@ -38,7 +38,8 @@
             </div>
 
             <div class="col-6 col-sm-3 mt-4">
-                <h2 class="font-weight-700">{{trans('messages.home.top_destination')}}</h2>
+                <!-- To be substituted -->
+                <!--<h2 class="font-weight-700">{{trans('messages.home.top_destination')}}</h2>
                 <div class="row">
                     <div class="col p-0">
                         <ul class="mt-1">
@@ -51,7 +52,7 @@
                             @endif
                         </ul>
                     </div>
-                </div>
+                </div>-->
             </div>
 
             <div class="col-6 col-sm-3 mt-5">
