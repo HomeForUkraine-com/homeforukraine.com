@@ -67,7 +67,7 @@ define('DEBUG', 0);
 // Sign particular part of code to remember with keyword __FOCUS
 
 // Global settings to make definitive
-$GLOBALS['!list_space'] = 'Share your home';
+$GLOBALS['!list_space'] = 'Host refugees';
 
 $GLOBALS['!social_login_warning'] = '
     <div style="margin:5px; font-style: italic;">
