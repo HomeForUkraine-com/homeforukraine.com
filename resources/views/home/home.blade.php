@@ -19,7 +19,15 @@
 			<div class="container">
 				<div class="row align-items-center text-center text-md-left">
 					<div class="col-md-6 col-lg-5 mb-5 mb-md-0">
-						<div class="main_formbg item animated zoomIn mt-80">
+
+						<div class="mainInfos">
+							<div class="title">
+								Help Ukrainians war refugees offering your space.
+							</div>
+						</div>
+
+						<!-- Temporary comment of main_formbg: to remove it -->
+						<!--<div class="main_formbg item animated zoomIn mt-80">
 							<h1 class="pt-4 ">{{trans('messages.home.make_your_reservation')}}</h1>
 							<form id="front-search-form" method="post" action="{{url('search')}}">
 								{{ csrf_field() }}
@@ -68,7 +76,7 @@
 									</div>
 								</div>
 							</form>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>
