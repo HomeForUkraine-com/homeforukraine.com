@@ -68,6 +68,7 @@ define('DEBUG', 0);
 
 // Global settings to make definitive
 $GLOBALS['!list_space'] = 'Host refugees';
+$GLOBALS['!pricing_definition'] = 'Expense reimbursements';
 
 $GLOBALS['!social_login_warning'] = '
     <div style="margin:5px; font-style: italic;">

@@ -87,6 +87,19 @@
 									</div>
 								</div>
 
+								<!-- Expenses description -->
+								<div class="form-row mt-4 border rounded pb-4 m-0" id="expenses-description-div">
+									<div class="form-group col-md-12 main-panelbg pb-3 pt-3 pl-4">
+										<h4 class="text-16 font-weight-700">{{trans('messages.listing_price.expenses_description')}}</h4>
+									</div>
+
+									<div class="max-width">         
+										<div class="input-addon max-width">
+											<textarea id="expenses_description" class="max-width" name="description">{{$result->property_price->expenses_description}}</textarea>     
+										</div>
+									</div>
+								</div>
+
 
 								<div class="mt-4 border rounded pb-4 m-0">
 									<div class="form-group col-md-12 main-panelbg pb-3 pt-3 pl-4">

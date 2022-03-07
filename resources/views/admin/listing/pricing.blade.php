@@ -4,8 +4,8 @@
          <!-- Main content -->
   <section class="content-header">
           <h1>
-          Pricing
-          <small>Pricing</small>
+          <?= $GLOBALS['!pricing_definition'] ?>
+          <small><?= $GLOBALS['!pricing_definition'] ?></small>
         </h1>
         <ol class="breadcrumb">
     <li><a href="{{url('/')}}/admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -51,6 +51,22 @@
               </p>
               <hr class="row-space-top-6 row-space-5 set-long-term-prices">
             @endif
+          </div>
+        </div>
+
+        <!-- Expenses description -->
+        <div class="box-body">
+        <div class="row">
+          <div class="col-md-12">
+           <h4>{{trans('messages.listing_price.expenses_description')}}</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="max-width">
+            <label for="listing_price_native" class="label-large">{{trans('messages.listing_price.expenses_description')}}</label>
+            <div class="input-addon">
+              <textarea id="expenses_description" name="description">{{$result->property_price->expenses_description}}</textarea>              
+            </div>
           </div>
         </div>
           

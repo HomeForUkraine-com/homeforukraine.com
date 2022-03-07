@@ -4477,3 +4477,11 @@ a.send-btn {
 	 color: black;
 	 font-size: 30px;
  }
+
+ .max-width{
+	 width: 100%;
+ }
+
+ textarea#expenses_description{
+	height: 175px;
+ }

@@ -371,15 +371,16 @@ return [
        'zip_postal_code'      =>'ZIP / Postal Code'
     ],
     'listing_price'=>[
-       'base_price'           =>'Base price',
+       'base_price'           =>'Basic expenses',
        'night_price'          =>'Nightly Price',
        'currency'             =>'Currency',
        'access_offer'         =>'You can offer discounts for longer stays by setting',
        'week_month'           =>'weekly and monthly',
        'price'                =>'prices',
        'long_term_price'      =>'Long-term prices',
-       'week_price'           =>'Weekly Discount Percent (%)', //need to translate
-       'monthly_price'        =>'Monthly Discount Percent (%)', //need to translate
+       'week_price'           =>'Weekly Discount Percent (%)', //need to be translated
+       'monthly_price'        =>'Monthly Discount Percent (%)', //need to be translated
+       'expenses_description' => 'Expenses description', //need to be translated (check automatic replace from en)
        'additional_price'     =>'Additional Pricing Options',
        'cleaning_fee'         =>'Cleaning fee',
        'additional_guest'     =>'Additional guests',
