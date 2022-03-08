@@ -2,6 +2,22 @@
 @push('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('public/js/intl-tel-input-13.0.0/build/css/intlTelInput.min.css')}}">
 @endpush
+
+<style> 
+#isOrganization + label{
+	margin-left: 20px;
+	margin-top: 1px;
+}
+
+#orgInfo {
+	display: none;
+	font-style:italic;
+	padding: 5px;
+	margin-bottom: 20xp;
+	font-size: 14px;
+}
+</style>
+
 @section('main')
 <div class="container mb-4 margin-top-85 min-height">
     <div class="d-flex justify-content-center">
@@ -70,6 +86,16 @@
 								@if ( $errors->has('password') ) <p class="error-tag">{{ $errors->first('password') }}</p> @endif
 								<input type="password" class='form-control text-14 p-2' name='password' id='password' placeholder='{{ trans('messages.login.password') }}'>
 						</div>
+
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input" id="isOrganization" name="isOrganization">
+							<label class="form-check-label" for="isOrganization">{{ trans('messages.sign_up.areYouOrg') }}</label>
+						</div>
+						<div id="orgInfo">
+							Register a no-profit organization account using an email directly attributable to your official organizazion domain.
+							After the confirmation of your email, your account should be validated manually by out staff. 
+						</div>
+
 
 						<div class="col-sm-12 p-0">
 							<label class="l-pad-none text-14">{{ trans('messages.sign_up.birth_day') }} <span class="text-13 text-danger">*</span></label>
@@ -141,6 +167,43 @@
 	<script type="text/javascript" src="{{ asset('public/js/isValidPhoneNumber.js') }}" type="text/javascript"></script>
 
 	<script type="text/javascript">
+
+		function setPersonFields(){
+
+		}
+
+		function setFields(isOrg){		
+			let fnV = "{{ trans('messages.sign_up.first_name') }}";
+			let lnV = "{{ trans('messages.sign_up.last_name') }}";
+
+			if(isOrg){
+				fnV = "Member name";
+				lnV = "Organization name";
+			}
+
+			let fn = $('#first_name');
+			fn.attr('placeholder', fnV);
+			fn.prev('label').html(fnV);
+
+			let ln = $('#last_name');
+			ln.attr('placeholder', lnV);
+			ln.prev('label').html(lnV);
+		}
+
+		// isOrganization checked
+		$('#isOrganization').change(
+		function(){
+			let check = $(this).is(':checked');
+
+			setFields(check);
+
+			if(check){
+				$("#orgInfo").show();
+			} else {
+				$("#orgInfo").hide();
+			}
+		});
+
 		$('select').on('change', function() {
 			var dobError = '';
 			var day = document.getElementById("user_birthday_day").value;

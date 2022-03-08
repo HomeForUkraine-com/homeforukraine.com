@@ -4485,3 +4485,8 @@ a.send-btn {
  textarea#expenses_description{
 	height: 175px;
  }
+
+ /* Bootstrap corrections */
+ b, strong {
+	font-weight: bold !important;
+}

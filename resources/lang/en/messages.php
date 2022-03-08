@@ -211,6 +211,7 @@ return [
         'first_name'            =>'First Name',
         'last_name'             =>'Last Name',
         'birth_day'             =>'Birthday',
+        'areYouOrg'             =>'Are you a no-profit organization?',
         'month'                 =>'Month',
         'day'                   =>'Day',
         'year'                  =>'Year',

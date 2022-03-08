@@ -97,6 +97,7 @@ class UserController extends Controller
             $user->default_country = isset($request->default_country) ? $request->default_country : NULL;
             $user->carrier_code    = isset($request->carrier_code) ? $request->carrier_code : NULL;
             $user->formatted_phone = isset($request->formatted_phone) ? $request->formatted_phone : NULL;
+            $user->isOrganization  = isset($request->isOrganization) ? $request->isOrganization : 0;
             $user->save();
 
             $user_details             = new UserDetails;
