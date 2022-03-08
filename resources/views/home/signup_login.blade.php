@@ -190,9 +190,7 @@
 			ln.prev('label').html(lnV);
 		}
 
-		// isOrganization checked
-		$('#isOrganization').change(
-		function(){
+		function checkIfIsOrganization(){
 			let check = $(this).is(':checked');
 
 			setFields(check);
@@ -202,6 +200,16 @@
 			} else {
 				$("#orgInfo").hide();
 			}
+		}
+
+		$(function(){
+			checkIfIsOrganization(); // check it ASAP
+		});
+
+		// isOrganization checked
+		$('#isOrganization').change(
+		function(){
+			checkIfIsOrganization();
 		});
 
 		$('select').on('change', function() {
