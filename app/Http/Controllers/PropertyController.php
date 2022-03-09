@@ -221,8 +221,9 @@ class PropertyController extends Controller
                     'country'           => 'required',
                     'city'              => 'required',
                     'state'             => 'required',
-                    'latitude'          => 'required|not_in:0',
                 );
+
+                if(!checked('disableMapPointer')) $rules['latitude'] = 'required|not_in:0';
 
                 $fieldNames = array(
                     'address_line_1' => 'Address Line 1',

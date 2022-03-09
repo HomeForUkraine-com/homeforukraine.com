@@ -74,8 +74,16 @@ $GLOBALS['!social_login_warning'] = '
     <div style="margin:5px; font-style: italic;">
         <b>Warning:</b> the login through Facebook and Google are in the process of validation by the companies.<br>
         For the moment sign in the website using standard registration and login forms. <b>Thank you for your patience!</b>
-    </div>
-    ';
+    </div>';
+
+$GLOBALS['disableMapPointer'] = true; // until Google API activation
+
+function checked($var){
+    if(!isset($GLOBALS[$var]))
+        return false;
+
+    return $GLOBALS[$var];
+}
 
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()

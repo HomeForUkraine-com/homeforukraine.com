@@ -255,7 +255,7 @@ return [
        'per_month'            =>'Per Month',
        'check_in'             =>'Check In',
        'check_out'            =>'Check Out',
-       'night'                =>'night',
+       'night'                =>'month',
        'service_fee'          =>'Service fee',
        'security_fee'         =>'Security Fee',
        'additional_guest_fee' =>'Additional Guest Fee',
