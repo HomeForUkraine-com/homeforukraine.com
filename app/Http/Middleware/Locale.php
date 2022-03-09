@@ -21,6 +21,18 @@ class Locale
         /*if(Auth::guard('admin')->check())
             return redirect('admin/dashboard');*/
         
-        return $next($request);
+        $response = $next($request);
+
+        if(checked('localeExceptionCatch')){
+            // Yes, i'm using locale middleware for catching exceptions...
+            if(isset($response->exception) && $response->exception!=null){
+                echo "Catched error in Locale middleware!<br>";
+                echo $response->exception->getMessage()."<br>";
+                echo $response->exception->getTraceAsString();
+                exit;
+            }
+        }
+
+        return $response;
     }
 }

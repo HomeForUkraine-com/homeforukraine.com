@@ -78,6 +78,8 @@ $GLOBALS['!social_login_warning'] = '
 
 $GLOBALS['disableMapPointer'] = true; // until Google API activation
 
+$GLOBALS['localeExceptionCatch'] = true; 
+
 function checked($var){
     if(!isset($GLOBALS[$var]))
         return false;
