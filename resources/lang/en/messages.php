@@ -317,7 +317,7 @@ return [
        'location'             => 'Location',
        'amenities'            => 'Amenities',
        'photos'               => 'Photos',
-       'price'                => 'Pricing',
+       'price'                => 'Expenses',
        'booking'              => 'Booking',
        'calender'             => 'Calender'
     ],
