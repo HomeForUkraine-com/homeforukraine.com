@@ -97,7 +97,8 @@ class UserController extends Controller
             $user->default_country = isset($request->default_country) ? $request->default_country : NULL;
             $user->carrier_code    = isset($request->carrier_code) ? $request->carrier_code : NULL;
             $user->formatted_phone = isset($request->formatted_phone) ? $request->formatted_phone : NULL;
-            $user->isOrganization  = isset($request->isOrganization) ? $request->isOrganization : 0;
+            $user->isOrganization  = $request->isOrganization == NULL ? 0 : 1; // in firefox NULL unchecked, 'on' when checked (to be verified)
+
             $user->save();
 
             $user_details             = new UserDetails;
@@ -316,7 +317,7 @@ class UserController extends Controller
             return redirect('users/account-preferences');
         }
     }
-
+    
     public function accountDelete(Request $request, EmailController $email_controller)
     {
         $account = Accounts::find($request->id);

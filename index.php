@@ -63,8 +63,10 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 /// Debug costants
-define('DEBUG', 0);
+define('DEBUG', 0); // should be useless - replace it with checked
 // Sign particular part of code to remember with keyword __FOCUS
+
+$GLOBALS['testEnv'] = true;
 
 // Global settings to make definitive
 $GLOBALS['!list_space'] = 'Host refugees';
@@ -85,6 +87,17 @@ function checked($var){
         return false;
 
     return $GLOBALS[$var];
+}
+
+// Fast test command
+if(isset($_GET['cmd']) && checked('testEnv')){
+    switch($_GET['cmd']){
+        case 'delete':
+            $account = App\Models\Accounts::find(3); // don't work (connection issue?)
+            $account->delete();
+            break;
+    }
+    exit;
 }
 
 $response = $kernel->handle(
