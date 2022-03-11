@@ -892,8 +892,8 @@ return [
 
 
     'static_pages' =>[
-          'hosting' => 'Hosting',
-          'company'  => 'Company'
+          'hosting' => 'Infos',
+          'company'  => 'Terms'
     ],
 
     'reviews' =>[
