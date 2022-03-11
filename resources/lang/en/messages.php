@@ -101,7 +101,7 @@ return [
         'people_say'               =>'People Say The Nicest Things',
         'choose_language'          =>'Choose Your Language',
         'choose_currency'          =>'Choose a Currency',
-        'all_rights_reserved'      =>'All Rights Reserved',
+        'all_rights_reserved'      =>'Creative Commons BY-NC-SA 4.0',
         'destination_slogan'       =>'Best places where to live in the world and enjoy your trip',
         'recommended_slogan'       => 'Alluring home where you can stay and enjoy a comfortable life.',
         'say_about_us'             =>'Say about Us'
