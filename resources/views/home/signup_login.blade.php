@@ -191,7 +191,7 @@
 		}
 
 		function checkIfIsOrganization(){
-			let check = $(this).is(':checked');
+			let check = $("#isOrganization").is(':checked');
 
 			setFields(check);
 

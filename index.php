@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Capsule\Manager as DB;
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -91,14 +94,33 @@ function checked($var){
 
 // Fast test command
 if(isset($_GET['cmd']) && checked('testEnv')){
+    include('config.php');
+
+    $Capsule = new Capsule;
+    $Capsule->addConnection($GLOBALS['config']['db']);
+    $Capsule->setAsGlobal();  //this is important
+    $Capsule->bootEloquent();
+
     switch($_GET['cmd']){
-        case 'delete':
-            $account = App\Models\Accounts::find(3); // don't work (connection issue?)
-            $account->delete();
+        case 'superficialUserDelete':
+            if(!isset($_GET['id']))
+                goto normal;
+
+            $id = $_GET['id'];
+            DB::delete('DELETE FROM users WHERE id='.$id);
+            DB::delete('DELETE FROM users_verification WHERE user_id='.$id);
+            DB::delete('DELETE FROM user_details WHERE user_id='.$id);
+            echo 'done.';
+
             break;
+
+        default:
+            echo 'unrecognized cmd';
     }
     exit;
 }
+
+normal:
 
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
