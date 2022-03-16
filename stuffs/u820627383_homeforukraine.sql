@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Creato il: Mar 07, 2022 alle 21:47
+-- Creato il: Mar 16, 2022 alle 12:09
 -- Versione del server: 10.5.12-MariaDB-cll-lve
 -- Versione PHP: 7.2.34
 
@@ -933,6 +933,7 @@ CREATE TABLE `users` (
   `profile_image` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `balance` double NOT NULL DEFAULT 0,
   `status` enum('Active','Inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
+  `isOrganization` int(1) NOT NULL DEFAULT 0,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
